@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="rf_menu_parent" name="Rising Force" sequence="1" web_icon="dc_partner,static/src/icon/rf.png"/>
+    <menuitem id="member_menu" parent="rf_menu_parent" sequence="1" groups="group_rf_admin_user,group_rf_member_user" action="member_action" name="Members"/>
+</odoo>

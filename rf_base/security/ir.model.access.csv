@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_admin_user_rf_base,access_admin_user_rf_base,model_rf_base,group_rf_admin_user,1,1,1,1
+access_admin_user_rf_member,access_admin_user_rf_member,model_rf_member,group_rf_admin_user,1,1,1,1
+access_admin_user_rf_character,access_admin_user_rf_character,model_rf_character,group_rf_admin_user,1,1,1,1
+access_admin_user_rf_pb,access_admin_user_rf_pb,model_rf_pb,group_rf_admin_user,1,1,1,1
+access_admin_user_rf_race,access_admin_user_rf_race,model_rf_race,group_rf_admin_user,1,1,1,1
+access_admin_user_rf_class,access_admin_user_rf_class,model_rf_jobclass,group_rf_admin_user,1,1,1,1
