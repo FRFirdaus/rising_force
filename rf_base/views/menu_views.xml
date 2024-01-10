@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="rf_menu_parent" name="Rising Force" sequence="1" web_icon="dc_partner,static/src/icon/rf.png"/>
-    <menuitem id="member_menu" parent="rf_menu_parent" sequence="1" groups="group_rf_admin_user,group_rf_member_user" action="member_action" name="Members"/>
+    <menuitem id="rf_menu_parent" name="Rising Force" sequence="1" web_icon="rf_base,static/src/icon/rf.png"/>
+    <menuitem id="reward_menu" parent="rf_menu_parent" sequence="11" groups="group_rf_admin_user,group_rf_member_user" action="rf_reward_action" name="Rewards"/>
+    <menuitem id="member_menu" parent="rf_menu_parent" sequence="20" groups="group_rf_admin_user,group_rf_member_user" action="member_action" name="Members"/>
+    <menuitem id="character_menu" parent="rf_menu_parent" sequence="21" groups="group_rf_admin_user,group_rf_member_user" action="character_action" name="Characters"/>
+
+    <menuitem id="configuration_menu" parent="rf_menu_parent" sequence="30" groups="group_rf_admin_user,group_rf_member_user" name="Configurations"/>
+    <menuitem id="base_menu" parent="configuration_menu" sequence="10" groups="group_rf_admin_user,group_rf_member_user" action="rf_base_action" name="RF Base"/>
+    <menuitem id="pb_menu" parent="configuration_menu" sequence="20" groups="group_rf_admin_user,group_rf_member_user" action="rf_boss_action" name="Pit Boss"/>
+    <menuitem id="race_menu" parent="configuration_menu" sequence="30" groups="group_rf_admin_user,group_rf_member_user" action="rf_race_action" name="Race"/>
+    <menuitem id="class_menu" parent="configuration_menu" sequence="40" groups="group_rf_admin_user,group_rf_member_user" action="rf_class_action" name="Job Class"/>
 </odoo>

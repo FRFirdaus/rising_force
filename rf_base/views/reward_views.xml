@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rf_reward_tree_view" model="ir.ui.view">
+        <field name="name">rf_reward_tree_view</field>
+        <field name="model">rf.reward</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="rf_id"/>
+                <field name="date"/>
+                <field name="boss_ids" widget="many2many_tags"/>
+                <field name="reward_uom_id"/>
+                <field name="total_reward"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rf_boss_form_view" model="ir.ui.view">
+        <field name="name">rf_boss_form_view</field>
+        <field name="model">rf.reward</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="rf_id"/>
+                            <field name="date"/>
+                            <field name="boss_ids" widget="many2many_tags"/>
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="reward_uom_id"/>
+                            <field name="auto_split"/>
+                            <field name="total_reward"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Lines">
+                            <field name="line_ids" context="{'default_reward_id': active_id}">
+                                <tree editable="bottom">
+                                    <field name="member_id"/>
+                                    <field name="character_id"/>
+                                    <field name="total_reward"/>
+                                    <field name="is_done"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="rf_reward_search_view" model="ir.ui.view">
+        <field name="name">rf_reward_search_view</field>
+        <field name="model">rf.reward</field>
+        <field name="arch" type="xml">
+            <search string="Search Reward">
+                <field name="rf_id"/>
+                <field name="date"/>
+                <field name="boss_ids"/>
+                <field name="reward_uom_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="rf_reward_action" model="ir.actions.act_window">
+        <field name="name">Guild Rewards</field>
+        <field name="res_model">rf.reward</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

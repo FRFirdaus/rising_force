@@ -11,3 +11,10 @@ class RFBase(models.Model):
         ('official', 'Official'),
         ('private', 'Private')
     ])
+
+    def name_get(self):
+        result = []
+        for rec in self:
+            result.append((rec.id, "%s (%s) | %s" % (rec.name, rec.server, rec.type)))
+
+        return result

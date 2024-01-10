@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="rf_boss_tree_view" model="ir.ui.view">
+        <field name="name">rf_boss_tree_view</field>
+        <field name="model">rf.pb</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="initial_name"/>
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="rf_boss_form_view" model="ir.ui.view">
+        <field name="name">rf_boss_form_view</field>
+        <field name="model">rf.pb</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="initial_name"/>
+                            <field name="location"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="rf_boss_search_view" model="ir.ui.view">
+        <field name="name">rf_boss_search_view</field>
+        <field name="model">rf.pb</field>
+        <field name="arch" type="xml">
+            <search string="Search member">
+                <field name="name"/>
+                <field name="initial_name"/>
+                <field name="location"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="rf_boss_action" model="ir.actions.act_window">
+        <field name="name">Pit Boss</field>
+        <field name="res_model">rf.pb</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

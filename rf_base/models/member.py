@@ -12,7 +12,7 @@ class RFMember(models.Model):
     mobile = fields.Char()
     discord = fields.Char()
 
-    character_ids = fields.One2Many('rf.character', 'member_id')
+    character_ids = fields.One2many('rf.character', 'member_id')
 
     def name_get(self):
         result = []
@@ -27,5 +27,5 @@ class RFCharacter(models.Model):
 
     member_id = fields.Many2one('rf.member', required=True)
     name = fields.Char(required=True, string="IGN/Nick")
-    race_id = fields.Many2one(required=True, 'rf.race')
-    class_id = fields.Many2one(required=True, 'rf.jobclass')
+    race_id = fields.Many2one('rf.race', required=True)
+    class_id = fields.Many2one('rf.jobclass', required=True)
