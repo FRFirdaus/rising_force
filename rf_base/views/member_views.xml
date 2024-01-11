@@ -8,6 +8,7 @@
                 <field name="name"/>
                 <field name="mobile"/>
                 <field name="discord"/>
+                <field name="total_character"/>
             </tree>
         </field>
     </record>

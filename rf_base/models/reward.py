@@ -7,6 +7,7 @@ class RFReward(models.Model):
     _name = 'rf.reward'
     _description = 'Guild Reward'
     _inherit = ['mail.thread']
+    _order = 'date desc'
     
     state = fields.Selection(
         [('draft', 'Draft'),
