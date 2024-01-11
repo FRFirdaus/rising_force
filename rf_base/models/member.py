@@ -8,6 +8,7 @@ class RFMember(models.Model):
     _order = 'name'
 
     active = fields.Boolean(default=True)
+    image = fields.Binary(attachment=True)
     name = fields.Char(required=True)
     mobile = fields.Char()
     discord = fields.Char()
