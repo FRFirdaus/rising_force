@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="rf_menu_parent" name="Rising Force" sequence="1" web_icon="rf_base,static/src/icon/rf.png"/>
-    <menuitem id="reward_menu" parent="rf_menu_parent" sequence="11" groups="group_rf_admin_user,group_rf_member_user" action="rf_reward_action" name="Rewards"/>
+    <menuitem id="rf_menu_parent" name="Rising Force" sequence="1" action="rf_reward_action" web_icon="rf_base,static/src/icon/rf.png"/>
+    <menuitem id="reward_menu_parent" parent="rf_menu_parent" sequence="11" groups="group_rf_admin_user,group_rf_member_user" name="Rewards"/>
+    <menuitem id="reward_menu" parent="reward_menu_parent" sequence="11" groups="group_rf_admin_user,group_rf_member_user" action="rf_reward_action" name="Reward"/>
+    <menuitem id="reward_detail_menu" parent="reward_menu_parent" sequence="12" groups="group_rf_admin_user,group_rf_member_user" action="rf_reward_line_action" name="Reward Lines"/>
     <menuitem id="member_menu" parent="rf_menu_parent" sequence="20" groups="group_rf_admin_user,group_rf_member_user" action="member_action" name="Members"/>
     <menuitem id="character_menu" parent="rf_menu_parent" sequence="21" groups="group_rf_admin_user,group_rf_member_user" action="character_action" name="Characters"/>
 

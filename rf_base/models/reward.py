@@ -76,8 +76,12 @@ class RFRewardLine(models.Model):
     _name = 'rf.reward.line'
     _description = 'Guild Reward details'
 
-    reward_id = fields.Many2one('rf.reward')
-    member_id = fields.Many2one('rf.member')
-    character_id = fields.Many2one('rf.character')
+    reward_id = fields.Many2one('rf.reward', required=True, ondelete="cascade")
+    member_id = fields.Many2one('rf.member', required=True,)
+    character_id = fields.Many2one('rf.character', required=True,)
     total_reward = fields.Float()
     is_done = fields.Boolean(string="Is Done?")
+    rf_id = fields.Many2one('rf.base', related="reward_id.rf_id", store=True)
+    uom_id = fields.Many2one('rf.reward.uom', related="reward_id.reward_uom_id", store=True)
+    date = fields.Datetime(related="reward_id.date", store=True)
+

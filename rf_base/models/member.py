@@ -11,7 +11,9 @@ class RFMember(models.Model):
     image = fields.Binary(attachment=True)
     name = fields.Char(required=True)
     total_character = fields.Integer(compute="_compute_total_character")
-    mobile = fields.Char()
+    bank = fields.Char()
+    account_number = fields.Char()
+    account_holder_name = fields.Char()
     discord = fields.Char()
 
     character_ids = fields.One2many('rf.character', 'member_id')
